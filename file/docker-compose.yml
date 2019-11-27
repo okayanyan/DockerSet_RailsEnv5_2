@@ -1,0 +1,30 @@
+version: '3'
+services:
+    db:
+        build:
+            context: .
+            dockerfile: Dockerfile_MySQL
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - "../../rails_env/db-data:/var/lib/mysql"
+        ports:
+            - "3306:3306"
+
+    app:
+        build:
+          context: .
+          dockerfile: Dockerfile_Rails
+        environment:
+            MYSQL_ENCODING: utf8
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+            MYSQL_DATABASE: app_db
+        volumes:
+            - "../../rails_env:/app"
+        ports:
+            - "3000:3000"
+        tty: true
+        links:
+            - db
+        working_dir: "/app"
