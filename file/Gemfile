@@ -37,15 +37,21 @@ gem 'mini_magick', '~> 4.8'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use slim views
-gem 'slim-rails'
-gem 'html2slim'
+gem 'slim-rails', '~> 3.2'
+gem 'html2slim', '~> 0.2'
+gem 'rails_autolink', '~> 1.1'
 
 # Use boostrp
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.3'
+
+# Use VScode plugin
+gem 'solargraph', '~> 0.38'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.9'
+  gem 'factory_bot_rails', '~> 5.1'
 end
 
 group :development do

@@ -28,7 +28,8 @@ echo '@import "bootstrap";' > ../../$fd_env/app/assets/stylesheets/application.s
 #docker-compose exec app touch $fdpath_app/app/assets/stylesheets/application.scss
 #docker-compose exec app "echo '@import \"bootstrap\";' > ${fdpath_app}/app/assets/stylesheets/application.scss"
 # Set Japanese
-docker-compose exec app wget https://raw.githubusercontent.com/svenfuchs/rails-i18n/master/rails/locale/ja.yml --output-file=$fdpath_app/config/locales/ja.yml
+docker-compose exec app "wget https://raw.githubusercontent.com/svenfuchs/rails-i18n/master/rails/locale/ja.yml"
+mv ../../$fd_env/ja.yml  ../../$fd_env/config/locales/ja.yml -f
 touch ../../$fd_env/config/initializers/locale.rb
 echo 'Rails.application.config.i18n.default_locale = :ja' > ../../$fd_env/config/initializers/locale.rb
 #docker-compose exec app touch $fdpath_app/config/initializers/locale.rb
