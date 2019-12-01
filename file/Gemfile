@@ -43,6 +43,8 @@ gem 'rails_autolink', '~> 1.1'
 
 # Use boostrp
 gem 'bootstrap', '~> 4.3'
+gem 'bootstrap-sass'
+gem 'jquery-rails', '~> 4.3'
 
 # Use VScode plugin
 gem 'solargraph', '~> 0.38'
@@ -59,14 +61,14 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring', '2.1'
+  gem 'spring-watcher-listen', '~> 2.0'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '~> 3'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
