@@ -23,7 +23,13 @@ RUN set -x && \
         : "create folder"&& \
         mkdir /app
 WORKDIR /app
-COPY ./Gemfile ./Gemfile
-COPY ./Gemfile.lock ./Gemfile.lock
+ADD ./Gemfile /app/Gemfile
+ADD ./Gemfile.lock /app/Gemfile.lock
 RUN set -x && \
         bundle install
+
+# 5 unicorn setting
+RUN set -x && \
+        : "set unicorn"
+ADD ./unicorn.rb /app/config/unicorn.rb
+ADD ./unicorn.rake /app/lib/tasks/unicorn.rake
