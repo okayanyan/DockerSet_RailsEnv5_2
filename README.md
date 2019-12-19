@@ -25,9 +25,9 @@
 3.  Set folder in working directory.
 
     ~~~
-    --- work_dir
-     |
-     -- set
+    work_dir --- set
+    		  |
+    		  -- (created rails_env)
     ~~~
 
 4.  Create .env file
